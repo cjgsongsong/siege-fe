@@ -1,3 +1,4 @@
+import "./Internationalizer";
 import GlobalStyles from "./Application.styles";
 import Router from "./Router";
 
