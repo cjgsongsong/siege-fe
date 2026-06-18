@@ -1,3 +1,4 @@
+import { INTERNATIONALIZATION } from "./constants";
 import internationalize from "./internationalize";
 
-export default internationalize;
+export { INTERNATIONALIZATION, internationalize };

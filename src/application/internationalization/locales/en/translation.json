@@ -1,4 +1,7 @@
 {
+  "components": {
+    "languageToggle": "🗪"
+  },
   "pages": {
     "notFound": {
       "message": "no ❤️"
