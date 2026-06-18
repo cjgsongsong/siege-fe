@@ -1,4 +1,5 @@
 import type { RouteObject } from "react-router";
+import NotFound from "../../pages/NotFound";
 
 /** Route paths. @enum */
 const ROUTE_PATHS = { DEFAULT: "/" } as const;
@@ -7,7 +8,7 @@ const ROUTE_PATHS = { DEFAULT: "/" } as const;
 export const ROUTES: RouteObject[] = [
   {
     element: <></>,
-    errorElement: <></>,
+    errorElement: <NotFound />,
     path: ROUTE_PATHS.DEFAULT,
   },
 ];
