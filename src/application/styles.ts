@@ -1,7 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+/** Component that groups the main content. @component */
+export const MainContentContainer = styled.main``;
 
 /** Component that injects global CSS on mount. @component */
-export default createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   body {
     height: 100vh;
     margin: 0;
