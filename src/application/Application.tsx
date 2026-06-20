@@ -5,7 +5,7 @@ export default function Application() {
   return (
     <>
       <GlobalStyles />
-      <MainContentContainer data-testid="siege-fe-main" />
+      <MainContentContainer data-testid="application-main" />
     </>
   );
 }
