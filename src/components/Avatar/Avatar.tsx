@@ -1,5 +1,6 @@
 import AvatarBody from "./AvatarBody";
 import AvatarClothes from "./AvatarClothes";
+import AvatarHair from "./AvatarHair";
 import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "./constants";
 import generateAvatarAssetFilePath from "./generateAvatarAssetFilePath";
 import { AvatarContainer, AvatarPart, BlendedAvatarPart } from "./styles";
@@ -10,10 +11,7 @@ export default function Avatar() {
     <AvatarContainer>
       <AvatarBody />
       <AvatarClothes />
-
-      <AvatarPart
-        src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.HAIR.DEFAULT)}
-      />
+      <AvatarHair />
 
       <AvatarPart
         src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.GLASSES.FRAME)}
