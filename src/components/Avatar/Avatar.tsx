@@ -1,33 +1,15 @@
 import AvatarBody from "./AvatarBody";
+import AvatarClothes from "./AvatarClothes";
 import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "./constants";
 import generateAvatarAssetFilePath from "./generateAvatarAssetFilePath";
-import {
-  AvatarContainer,
-  AvatarPart,
-  BlendedAvatarPart,
-  OpaqueAvatarPart,
-} from "./styles";
+import { AvatarContainer, AvatarPart, BlendedAvatarPart } from "./styles";
 
 /** Interactive self avatar reminiscent of Filipino politicians in posters. @component */
 export default function Avatar() {
   return (
     <AvatarContainer>
       <AvatarBody />
-
-      <AvatarPart
-        src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.CLOTHES.SANDO)}
-      />
-      <OpaqueAvatarPart
-        src={generateAvatarAssetFilePath(
-          AVATAR_ASSET_PATHS.FILE.CLOTHES.BARONG,
-        )}
-        {...AVATAR_ASSET_STYLES.CLOTHES.BARONG}
-      />
-      <AvatarPart
-        src={generateAvatarAssetFilePath(
-          AVATAR_ASSET_PATHS.FILE.CLOTHES.SABLAY,
-        )}
-      />
+      <AvatarClothes />
 
       <AvatarPart
         src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.HAIR.DEFAULT)}
