@@ -1,3 +1,4 @@
+import AvatarBody from "./AvatarBody";
 import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "./constants";
 import generateAvatarAssetFilePath from "./generateAvatarAssetFilePath";
 import {
@@ -11,13 +12,7 @@ import {
 export default function Avatar() {
   return (
     <AvatarContainer>
-      <AvatarPart
-        src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.BODY.BASE)}
-      />
-      <BlendedAvatarPart
-        src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.BODY.BLUSH)}
-        {...AVATAR_ASSET_STYLES.BODY.BLUSH}
-      />
+      <AvatarBody />
 
       <AvatarPart
         src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.CLOTHES.SANDO)}
