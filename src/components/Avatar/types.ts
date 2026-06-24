@@ -29,6 +29,12 @@ export interface OpaqueAvatarPartProps {
   $opacity: number;
 }
 
+/** Type definition of properties expected by stacks of avatar parts. @type */
+export interface AvatarPartStackProps {
+  /** Whether the cursor is in the trigger area or not. @property */
+  $isHovering?: boolean;
+}
+
 /** Type definition of `generateFilePath`'s parameters. @type */
 export interface generateFilePathProps {
   /** Directory path that contains the asset. @property */

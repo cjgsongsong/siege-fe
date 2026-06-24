@@ -1,11 +1,34 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import type {
+  AvatarPartStackProps,
   AvatarTriggerAreaProps,
   BlendedAvatarPartProps,
   OpaqueAvatarPartProps,
 } from "./types";
 
-/** Container of stacked avatar part containers. @component */
+const PULSE_ANIMATION = css`
+  @keyframes pulse {
+    0% {
+      scale: 1;
+    }
+    25% {
+      scale 1.025;
+    }
+    50% {
+      scale 1;
+    }
+    75% {
+      scale: 1.025;
+    }
+    100% {
+      scale 1;
+    }
+  }
+
+  animation: pulse 0.5s infinite;
+`;
+
+/** Container of avatar sections. @component */
 export const AvatarContainer = styled.div`
   height: 75vh;
   position: relative;
@@ -19,8 +42,17 @@ export const AvatarPart = styled.img`
   width: 100%;
 `;
 
-/** Container of stacked avatar parts.  @component */
-export const AvatarPartContainer = styled.div`
+/** Stack of avatar parts that pulsate on hover. @component */
+export const AvatarPartStack = styled.div<AvatarPartStackProps>`
+  height: 100%;
+  position: absolute;
+  width: 100%;
+
+  ${(props) => props?.$isHovering && PULSE_ANIMATION}
+`;
+
+/** Avatar parts and their trigger area (if it exists).  @component */
+export const AvatarSection = styled.div`
   height: 100%;
   position: absolute;
   width: 100%;

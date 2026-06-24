@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   AVATAR_ASSET_PATHS,
   AVATAR_ASSET_STYLES,
@@ -9,18 +10,33 @@ import {
 } from "../generateFilePath";
 import {
   AvatarPart,
-  AvatarPartContainer,
+  AvatarPartStack,
+  AvatarSection,
   AvatarTriggerArea,
   BlendedAvatarPart,
 } from "../styles";
 
 /** Glasses of the interactive self avatar. @component */
 export default function AvatarGlasses() {
+  const [isHovering, setIsHovering] = useState(false);
+
+  function handleMouseEnter() {
+    setIsHovering(true);
+  }
+  function handleMouseLeave() {
+    setIsHovering(false);
+  }
+
   return (
-    <AvatarPartContainer>
-      <AvatarPart
-        src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.GLASSES.FRAME)}
-      />
+    <AvatarSection>
+      <AvatarPartStack $isHovering={isHovering}>
+        <AvatarPart
+          src={generateAvatarAssetFilePath(
+            AVATAR_ASSET_PATHS.FILE.GLASSES.FRAME,
+          )}
+        />
+      </AvatarPartStack>
+
       <BlendedAvatarPart
         src={generateAvatarAssetFilePath(
           AVATAR_ASSET_PATHS.FILE.GLASSES.LENS.COLOR,
@@ -38,8 +54,10 @@ export default function AvatarGlasses() {
         $cursorFilePath={generateCursorAssetFilePath(
           CURSOR_ASSET_PATHS.FILE.GLASSES,
         )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...AVATAR_ASSET_STYLES.TRIGGER_AREA.GLASSES}
       />
-    </AvatarPartContainer>
+    </AvatarSection>
   );
 }
