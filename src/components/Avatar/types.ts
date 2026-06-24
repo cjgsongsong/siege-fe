@@ -23,6 +23,16 @@ export interface OpaqueAvatarPartProps {
   $opacity: number;
 }
 
+/** Type definition of `generateFilePath`'s parameters. @type */
+export interface generateFilePathProps {
+  /** Directory path that contains the asset. @property */
+  directoryPath: string;
+  /** Asset file extension. @property */
+  fileExtension: string;
+  /** Asset file name. @property */
+  fileName: string;
+}
+
 /** Type definition of file name literals pertaining to avatar body assets. @type */
 type AvatarBodyFileName = Member<typeof AVATAR_ASSET_PATHS.FILE.BODY>;
 

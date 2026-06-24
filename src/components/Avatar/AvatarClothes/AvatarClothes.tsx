@@ -1,5 +1,5 @@
 import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "../constants";
-import generateAvatarAssetFilePath from "../generateAvatarAssetFilePath";
+import { generateAvatarAssetFilePath } from "../generateFilePath";
 import {
   AvatarPart,
   AvatarPartContainer,
