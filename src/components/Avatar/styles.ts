@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import type { BlendedAvatarPartProps, OpaqueAvatarPartProps } from "./types";
+import type {
+  AvatarTriggerAreaProps,
+  BlendedAvatarPartProps,
+  OpaqueAvatarPartProps,
+} from "./types";
 
 /** Container of stacked avatar part containers. @component */
 export const AvatarContainer = styled.div`
@@ -20,6 +24,18 @@ export const AvatarPartContainer = styled.div`
   height: 100%;
   position: absolute;
   width: 100%;
+`;
+
+/** Trigger area of a part of the interactive self avatar. @component */
+export const AvatarTriggerArea = styled.div<AvatarTriggerAreaProps>`
+  height: ${(props) => props.$height}%;
+  position: absolute;
+  width: ${(props) => props.$width}%;
+  z-index: 1;
+
+  ${(props) => props?.$bottom !== undefined && `bottom: ${props.$bottom}%;`}
+  ${(props) => props?.$left !== undefined && `left: ${props.$left}%;`}
+  ${(props) => props?.$top !== undefined && `top: ${props.$top}%;`}
 `;
 
 /** Avatar part that is partially opaque. @component */

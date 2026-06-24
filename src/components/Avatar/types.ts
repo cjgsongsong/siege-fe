@@ -3,6 +3,20 @@ import { AVATAR_ASSET_PATHS, MIX_BLEND_MODES } from "./constants";
 /** Utitility type definition of an enumeration's member given its enumeration's type. @type */
 type Member<T> = T[keyof T];
 
+/** Type definition of properties expected by avatar trigger areas. @type */
+export interface AvatarTriggerAreaProps {
+  /** Percentage at which the trigger area starts to extend vertically from the bottom edge. @property */
+  $bottom?: number;
+  /** Percentage at which the trigger area extends vertically. @property */
+  $height: number;
+  /** Percentage at which the trigger area starts to extend horizontally from the left edge. @property */
+  $left?: number;
+  /** Percentage at which the trigger area starts to extend vertically from the top edge. @property */
+  $top?: number;
+  /** Percentage at which the trigger area extends horizontally. @property */
+  $width: number;
+}
+
 /** Type definition of properties expected by avatar parts that are partially opaque. @type */
 export interface OpaqueAvatarPartProps {
   /** Percentage at which the avatar part is opaque. @property */

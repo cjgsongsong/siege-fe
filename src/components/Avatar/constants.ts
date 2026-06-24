@@ -62,4 +62,23 @@ export const AVATAR_ASSET_STYLES = {
       },
     },
   },
+  TRIGGER_AREA: {
+    CLOTHES: {
+      $bottom: 0,
+      $height: 30,
+      $width: 99,
+    },
+    GLASSES: {
+      $height: 12,
+      $left: 24,
+      $top: 39,
+      $width: 47,
+    },
+    HAIR: {
+      $height: 25,
+      $left: 25.5,
+      $top: 12.5,
+      $width: 45,
+    },
+  },
 } as const;
