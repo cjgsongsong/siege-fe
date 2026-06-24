@@ -1,11 +1,11 @@
 import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "../constants";
 import generateAvatarAssetFilePath from "../generateAvatarAssetFilePath";
-import { AvatarPart, OpaqueAvatarPart } from "../styles";
+import { AvatarPart, AvatarPartContainer, OpaqueAvatarPart } from "../styles";
 
 /** Clothes of the interactive self avatar. @component */
 export default function AvatarClothes() {
   return (
-    <>
+    <AvatarPartContainer>
       <AvatarPart
         src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.CLOTHES.SANDO)}
       />
@@ -20,6 +20,6 @@ export default function AvatarClothes() {
           AVATAR_ASSET_PATHS.FILE.CLOTHES.SABLAY,
         )}
       />
-    </>
+    </AvatarPartContainer>
   );
 }

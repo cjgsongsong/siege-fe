@@ -1,11 +1,11 @@
 import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "../constants";
 import generateAvatarAssetFilePath from "../generateAvatarAssetFilePath";
-import { AvatarPart, BlendedAvatarPart } from "../styles";
+import { AvatarPart, AvatarPartContainer, BlendedAvatarPart } from "../styles";
 
 /** Glasses of the interactive self avatar. @component */
 export default function AvatarGlasses() {
   return (
-    <>
+    <AvatarPartContainer>
       <AvatarPart
         src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.GLASSES.FRAME)}
       />
@@ -21,6 +21,6 @@ export default function AvatarGlasses() {
         )}
         {...AVATAR_ASSET_STYLES.GLASSES.TINT.NORMAL}
       />
-    </>
+    </AvatarPartContainer>
   );
 }

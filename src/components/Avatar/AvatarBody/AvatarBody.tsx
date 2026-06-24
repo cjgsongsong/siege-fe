@@ -1,11 +1,11 @@
 import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "../constants";
 import generateAvatarAssetFilePath from "../generateAvatarAssetFilePath";
-import { AvatarPart, BlendedAvatarPart } from "../styles";
+import { AvatarPart, AvatarPartContainer, BlendedAvatarPart } from "../styles";
 
 /** Body of the interactive self avatar. @component */
 export default function AvatarBody() {
   return (
-    <>
+    <AvatarPartContainer>
       <AvatarPart
         src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.BODY.BASE)}
       />
@@ -13,6 +13,6 @@ export default function AvatarBody() {
         src={generateAvatarAssetFilePath(AVATAR_ASSET_PATHS.FILE.BODY.BLUSH)}
         {...AVATAR_ASSET_STYLES.BODY.BLUSH}
       />
-    </>
+    </AvatarPartContainer>
   );
 }

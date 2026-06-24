@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import type { BlendedAvatarPartProps, OpaqueAvatarPartProps } from "./types";
 
-/** Container of stacked avatar parts. @component */
+/** Container of stacked avatar part containers. @component */
 export const AvatarContainer = styled.div`
   height: 75vh;
   position: relative;
@@ -10,8 +10,16 @@ export const AvatarContainer = styled.div`
 
 /** Resized avatar part. @component */
 export const AvatarPart = styled.img`
-  height: 75vh;
+  height: 100%;
   position: absolute;
+  width: 100%;
+`;
+
+/** Container of stacked avatar parts.  @component */
+export const AvatarPartContainer = styled.div`
+  height: 100%;
+  position: absolute;
+  width: 100%;
 `;
 
 /** Avatar part that is partially opaque. @component */
