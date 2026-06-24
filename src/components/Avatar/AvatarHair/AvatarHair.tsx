@@ -2,12 +2,14 @@ import { useState } from "react";
 import {
   AVATAR_ASSET_PATHS,
   AVATAR_ASSET_STYLES,
+  AVATAR_CONFIGURATIONS,
   CURSOR_ASSET_PATHS,
 } from "../constants";
 import {
   generateAvatarAssetFilePath,
   generateCursorAssetFilePath,
 } from "../generateFilePath";
+import setNextConfigurationIndex from "../setNextConfigurationIndex";
 import {
   AvatarPart,
   AvatarPartStack,
@@ -17,8 +19,17 @@ import {
 
 /** Hair of the interactive self avatar. @component */
 export default function AvatarHair() {
+  const [hairIndex, setHairIndex] = useState(
+    AVATAR_CONFIGURATIONS.HAIR.indexOf(AVATAR_ASSET_PATHS.FILE.HAIR.DEFAULT),
+  );
   const [isHovering, setIsHovering] = useState(false);
 
+  function handleClick() {
+    setNextConfigurationIndex({
+      configurations: AVATAR_CONFIGURATIONS.HAIR,
+      setConfigurationIndex: setHairIndex,
+    });
+  }
   function handleMouseEnter() {
     setIsHovering(true);
   }
@@ -31,7 +42,7 @@ export default function AvatarHair() {
       <AvatarPartStack $isHovering={isHovering}>
         <AvatarPart
           src={generateAvatarAssetFilePath(
-            AVATAR_ASSET_PATHS.FILE.HAIR.DEFAULT,
+            AVATAR_CONFIGURATIONS.HAIR[hairIndex],
           )}
         />
       </AvatarPartStack>
@@ -40,6 +51,7 @@ export default function AvatarHair() {
         $cursorFilePath={generateCursorAssetFilePath(
           CURSOR_ASSET_PATHS.FILE.SCISSORS,
         )}
+        onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...AVATAR_ASSET_STYLES.TRIGGER_AREA.HAIR}

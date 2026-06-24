@@ -1,3 +1,4 @@
+import type { Dispatch, SetStateAction } from "react";
 import {
   AVATAR_ASSET_PATHS,
   CURSOR_ASSET_PATHS,
@@ -73,3 +74,11 @@ export interface BlendedAvatarPartProps extends OpaqueAvatarPartProps {
 
 /** Type definition of file name literals pertaining to cursor assets. @type */
 export type CursorAssetFileName = Member<typeof CURSOR_ASSET_PATHS.FILE>;
+
+/** Type definition of `setNextConfigurationIndex`'s parameters. @type */
+export interface setNextConfigurationIndexProps {
+  /** List of avatar configurations. @property */
+  configurations: readonly (AvatarAssetFileName | CursorAssetFileName | "")[];
+  /** Function to set the configuration index. @property */
+  setConfigurationIndex: Dispatch<SetStateAction<number>>;
+}

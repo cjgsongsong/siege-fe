@@ -93,3 +93,8 @@ export const AVATAR_ASSET_STYLES = {
     },
   },
 } as const;
+
+/** Avatar configurations. @enum */
+export const AVATAR_CONFIGURATIONS = {
+  HAIR: Object.values(AVATAR_ASSET_PATHS.FILE.HAIR),
+} as const;
