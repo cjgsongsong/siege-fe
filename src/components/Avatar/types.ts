@@ -1,4 +1,8 @@
-import { AVATAR_ASSET_PATHS, MIX_BLEND_MODES } from "./constants";
+import {
+  AVATAR_ASSET_PATHS,
+  CURSOR_ASSET_PATHS,
+  MIX_BLEND_MODES,
+} from "./constants";
 
 /** Utitility type definition of an enumeration's member given its enumeration's type. @type */
 type Member<T> = T[keyof T];
@@ -7,6 +11,8 @@ type Member<T> = T[keyof T];
 export interface AvatarTriggerAreaProps {
   /** Percentage at which the trigger area starts to extend vertically from the bottom edge. @property */
   $bottom?: number;
+  /** File path of the cursor asset. @property */
+  $cursorFilePath: string;
   /** Percentage at which the trigger area extends vertically. @property */
   $height: number;
   /** Percentage at which the trigger area starts to extend horizontally from the left edge. @property */
@@ -58,3 +64,6 @@ export interface BlendedAvatarPartProps extends OpaqueAvatarPartProps {
   /** Modes by which an element blends with its backdrop. @property */
   $mixBlendMode: Member<typeof MIX_BLEND_MODES>;
 }
+
+/** Type definition of file name literals pertaining to cursor assets. @type */
+export type CursorAssetFileName = Member<typeof CURSOR_ASSET_PATHS.FILE>;

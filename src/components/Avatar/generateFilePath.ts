@@ -1,5 +1,9 @@
-import { AVATAR_ASSET_PATHS } from "./constants";
-import type { AvatarAssetFileName, generateFilePathProps } from "./types";
+import { AVATAR_ASSET_PATHS, CURSOR_ASSET_PATHS } from "./constants";
+import type {
+  AvatarAssetFileName,
+  CursorAssetFileName,
+  generateFilePathProps,
+} from "./types";
 
 /**
  * Generate file path from given path substrings.
@@ -29,6 +33,21 @@ export function generateAvatarAssetFilePath(fileName: AvatarAssetFileName) {
   return generateFilePath({
     directoryPath: AVATAR_ASSET_PATHS.DIRECTORY,
     fileExtension: AVATAR_ASSET_PATHS.FILE_EXTENSION,
+    fileName,
+  });
+}
+
+/**
+ * Generate cursor asset file path from given cursor asset file name.
+ *
+ * @function
+ * @param fileName Cursor asset file name.
+ * @returns Cursor asset file path.
+ */
+export function generateCursorAssetFilePath(fileName: CursorAssetFileName) {
+  return generateFilePath({
+    directoryPath: CURSOR_ASSET_PATHS.DIRECTORY,
+    fileExtension: CURSOR_ASSET_PATHS.FILE_EXTENSION,
     fileName,
   });
 }

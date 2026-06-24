@@ -1,5 +1,12 @@
-import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "../constants";
-import { generateAvatarAssetFilePath } from "../generateFilePath";
+import {
+  AVATAR_ASSET_PATHS,
+  AVATAR_ASSET_STYLES,
+  CURSOR_ASSET_PATHS,
+} from "../constants";
+import {
+  generateAvatarAssetFilePath,
+  generateCursorAssetFilePath,
+} from "../generateFilePath";
 import {
   AvatarPart,
   AvatarPartContainer,
@@ -26,7 +33,12 @@ export default function AvatarClothes() {
         )}
       />
 
-      <AvatarTriggerArea {...AVATAR_ASSET_STYLES.TRIGGER_AREA.CLOTHES} />
+      <AvatarTriggerArea
+        $cursorFilePath={generateCursorAssetFilePath(
+          CURSOR_ASSET_PATHS.FILE.THREAD,
+        )}
+        {...AVATAR_ASSET_STYLES.TRIGGER_AREA.CLOTHES}
+      />
     </AvatarPartContainer>
   );
 }

@@ -27,6 +27,17 @@ export const AVATAR_ASSET_PATHS = {
   FILE_EXTENSION: ".png",
 } as const;
 
+/** Cursor asset path substrings. @enum  */
+export const CURSOR_ASSET_PATHS = {
+  DIRECTORY: "src/assets/cursors/",
+  FILE: {
+    GLASSES: "glasses",
+    SCISSORS: "scissors",
+    THREAD: "thread",
+  },
+  FILE_EXTENSION: ".svg",
+} as const;
+
 /** Modes by which an element blends with its backdrop. @enum */
 export const MIX_BLEND_MODES = {
   ADD: "color-dodge",

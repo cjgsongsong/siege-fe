@@ -28,6 +28,7 @@ export const AvatarPartContainer = styled.div`
 
 /** Trigger area of a part of the interactive self avatar. @component */
 export const AvatarTriggerArea = styled.div<AvatarTriggerAreaProps>`
+  cursor: url(${(props) => props.$cursorFilePath}), auto;
   height: ${(props) => props.$height}%;
   position: absolute;
   width: ${(props) => props.$width}%;

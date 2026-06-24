@@ -1,5 +1,12 @@
-import { AVATAR_ASSET_PATHS, AVATAR_ASSET_STYLES } from "../constants";
-import { generateAvatarAssetFilePath } from "../generateFilePath";
+import {
+  AVATAR_ASSET_PATHS,
+  AVATAR_ASSET_STYLES,
+  CURSOR_ASSET_PATHS,
+} from "../constants";
+import {
+  generateAvatarAssetFilePath,
+  generateCursorAssetFilePath,
+} from "../generateFilePath";
 import {
   AvatarPart,
   AvatarPartContainer,
@@ -27,7 +34,12 @@ export default function AvatarGlasses() {
         {...AVATAR_ASSET_STYLES.GLASSES.TINT.NORMAL}
       />
 
-      <AvatarTriggerArea {...AVATAR_ASSET_STYLES.TRIGGER_AREA.GLASSES} />
+      <AvatarTriggerArea
+        $cursorFilePath={generateCursorAssetFilePath(
+          CURSOR_ASSET_PATHS.FILE.GLASSES,
+        )}
+        {...AVATAR_ASSET_STYLES.TRIGGER_AREA.GLASSES}
+      />
     </AvatarPartContainer>
   );
 }
