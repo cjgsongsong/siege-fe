@@ -96,6 +96,7 @@ export const AVATAR_ASSET_STYLES = {
 
 /** Avatar configurations. @enum */
 export const AVATAR_CONFIGURATIONS = {
+  CLOTHES: ["", ...Object.values(AVATAR_ASSET_PATHS.FILE.CLOTHES)],
   GLASSES: ["", AVATAR_ASSET_PATHS.FILE.GLASSES.FRAME],
   HAIR: Object.values(AVATAR_ASSET_PATHS.FILE.HAIR),
 } as const;
