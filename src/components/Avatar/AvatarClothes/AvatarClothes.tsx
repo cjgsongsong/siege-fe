@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import {
   AVATAR_ASSET_PATHS,
   AVATAR_ASSET_STYLES,
@@ -17,9 +17,12 @@ import {
   AvatarTriggerArea,
   OpaqueAvatarPart,
 } from "../styles";
+import { AvatarActionContext } from "../../../context/avatar";
 
 /** Clothes of the interactive self avatar. @component */
 export default function AvatarClothes() {
+  const { setIsBlushing } = useContext(AvatarActionContext);
+
   const [clothesIndex, setClothesIndex] = useState(
     AVATAR_CONFIGURATIONS.CLOTHES.indexOf(
       AVATAR_ASSET_PATHS.FILE.CLOTHES.SABLAY,
@@ -44,6 +47,11 @@ export default function AvatarClothes() {
   function handleMouseLeave() {
     setIsHovering(false);
   }
+
+  useEffect(
+    () => setIsBlushing(clothesConfiguration === ""),
+    [clothesConfiguration],
+  );
 
   return (
     <AvatarSection>
