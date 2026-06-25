@@ -3,15 +3,18 @@ import AvatarClothes from "./AvatarClothes";
 import AvatarGlasses from "./AvatarGlasses";
 import AvatarHair from "./AvatarHair";
 import { AvatarContainer } from "./styles";
+import { AvatarProvider } from "../../context/avatar";
 
 /** Interactive self avatar reminiscent of Filipino politicians in posters. @component */
 export default function Avatar() {
   return (
-    <AvatarContainer>
-      <AvatarBody />
-      <AvatarClothes />
-      <AvatarHair />
-      <AvatarGlasses />
-    </AvatarContainer>
+    <AvatarProvider>
+      <AvatarContainer>
+        <AvatarBody />
+        <AvatarClothes />
+        <AvatarHair />
+        <AvatarGlasses />
+      </AvatarContainer>
+    </AvatarProvider>
   );
 }
